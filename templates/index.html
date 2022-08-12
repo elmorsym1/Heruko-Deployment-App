@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Kx (eff.)</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+		<input type="text" name="kx1" placeholder="kx1 [mD]" required="required" />
+		<input type="text" name="kx2" placeholder="kx2 [mD]" required="required" />
+		<input type="text" name="kx3" placeholder="kx3 [mD]" required="required" />
+		<input type="text" name="kx4" placeholder="kx4 [mD]" required="required" />
+		<input type="text" name="kx5" placeholder="kx5 [mD]" required="required" />
+		<input type="text" name="kx6" placeholder="kx6 [mD]" required="required" />
+		<input type="text" name="kx7" placeholder="kx7 [mD]" required="required" />
+		<input type="text" name="kx8" placeholder="kx8 [mD]" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+ <img src="/static/images/Created-by.svg" style="width: 400px;position: absolute;bottom: 10px;left: 10px;" alt="Company Logo"/>
+
+</body>
+</html>
